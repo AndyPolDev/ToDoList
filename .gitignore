@@ -88,3 +88,10 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+/.DS_Store
+/Pods
+/Todoey-Realm/Data Model/.DS_Store
+/Todoey-Realm.xcworkspace/contents.xcworkspacedata
+/Todoey-Realm.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+/Todoey-Realm.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+/Todoey-Realm.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist

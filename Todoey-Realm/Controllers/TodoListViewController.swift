@@ -4,7 +4,7 @@ import ChameleonFramework
 
 //Данный класс является сабклассом от SwipeTableViewController
 class TodoListViewController: SwipeTableViewController {
-   
+    
     @IBOutlet weak var searchBar: UISearchBar!
     
     let realm = try! Realm()
@@ -38,8 +38,7 @@ class TodoListViewController: SwipeTableViewController {
                 navBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: ContrastColorOf(navBarColour, returnFlat: true)]
                 
                 searchBar.barTintColor = UIColor(hexString: colourHex)
-//                searchBar.searchFi = ContrastColorOf(navBarColour, returnFlat: true)
-                
+                searchBar.searchTextField.backgroundColor = .white
             }
         }
     }
@@ -159,21 +158,21 @@ class TodoListViewController: SwipeTableViewController {
 //MARK: - SearchBar methods
 
 extension TodoListViewController: UISearchBarDelegate {
-
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         todoItems = todoItems?.filter("title CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "dateCreated", ascending: true)
         tableView.reloadData()
-
+        
     }
-
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchBar.text?.count == 0 {
             loadItems()
-
+            
             DispatchQueue.main.async {
                 searchBar.resignFirstResponder()
-
+                
             }
         }
     }
